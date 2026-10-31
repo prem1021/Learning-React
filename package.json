@@ -2,6 +2,7 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "react-bootstrap": "^2.10.10",
+    "react-router": "^8.5.1",
     "styled-components": "^6.6.0"
   }
 }
