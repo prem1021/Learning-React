@@ -1,11 +1,16 @@
 // import { BrowserRouter, Routes, Route, Link } from 'react-router'
 // export default function App() {
 
-import { Routes, Route, Link } from "react-router";
+import { Navigate, Routes, Route, Link } from "react-router";
 import Home from "./Home";
 import Login from "./Login";
 import About from "./About";
 import Navbarr from "./Navbarr";
+import PageNotFound from "./PageNotFound";
+import College from "./College";
+import Student from "./Student";
+import Department from "./Department";
+import CollegeDetails from "./CollegeDetails";
 
 //   return (
 //     <div>
@@ -30,11 +35,26 @@ function App() {
   return (
     <>
 
-      <Navbarr />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
+        <Route element={<Navbarr />}>   //This route bounds the Navbar
+          <Route path="/" element={<Home />} />
+          <Route path='user'>
+            <Route path="/user/about" element={<About />} />
+            <Route path="/user/login" element={<Login />} />
+          </Route>
+
+        </Route>
+        <Route path="/college" element={<College />}>
+          <Route index element={<Student />} />  //index will open student at default
+          <Route path="department" element={<Department />} />
+          <Route path="details" element={<CollegeDetails />} />
+        </Route>
+
+        //topic Page not found (404)
+        {/* <Route path="/*" element={<PageNotFound />} />   */}
+
+        //if at any wrong url we want to naviagte diretcly at any particular Page
+        <Route path="/*" element={<Navigate to="/login" />} />
       </Routes>
 
     </>
