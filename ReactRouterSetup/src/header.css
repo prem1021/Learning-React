@@ -15,7 +15,7 @@ body {
     list-style-type: none;
     margin: auto;
     justify-content: space-around;
-    width: 300px;
+    width: 450px;
 }
 
 .header ul li {
@@ -36,4 +36,7 @@ body {
     text-decoration: none;
     font-size: 20px;
     margin: 10px;
+}
+.active{
+    font-weight: 800;
 }

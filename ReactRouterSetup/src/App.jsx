@@ -11,6 +11,8 @@ import College from "./College";
 import Student from "./Student";
 import Department from "./Department";
 import CollegeDetails from "./CollegeDetails";
+import UserList from "./UserList";
+import UserDetails from "./UserDetails";
 
 //   return (
 //     <div>
@@ -38,6 +40,10 @@ function App() {
       <Routes>
         <Route element={<Navbarr />}>   //This route bounds the Navbar
           <Route path="/" element={<Home />} />
+          <Route path="users/list?" element={<UserList />} /> //Optional Segement
+
+          <Route path="/users/:id/:name?" element={<UserDetails />} />
+
           <Route path='user'>
             <Route path="/user/about" element={<About />} />
             <Route path="/user/login" element={<Login />} />
@@ -51,7 +57,7 @@ function App() {
         </Route>
 
         //topic Page not found (404)
-        {/* <Route path="/*" element={<PageNotFound />} />   */}
+        <Route path="/*" element={<PageNotFound />} />
 
         //if at any wrong url we want to naviagte diretcly at any particular Page
         <Route path="/*" element={<Navigate to="/login" />} />

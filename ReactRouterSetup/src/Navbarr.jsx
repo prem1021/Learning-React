@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router'
+import { Link, NavLink, Outlet } from 'react-router'
 import "./header.css"
 
 const Navbarr = () => {
@@ -7,25 +7,33 @@ const Navbarr = () => {
         <div>
             <div className='header'>
                 <div>
-                    <Link className="link" to={"/"}><h2>Logo</h2></Link>
+                    <NavLink className="link" to={"/"}><h2>Logo</h2></NavLink>
                 </div>
 
                 <div>
                     <ul>
                         <li>
-                            <Link className="link" to="/">Home</Link>
+                            <NavLink className="link" to="/">Home</NavLink>
 
                         </li>
                         <li>
-                            <Link className="link" to="/user/login">Login</Link>
+                            <NavLink className="link" to="/user/login">Login</NavLink>
 
                         </li>
                         <li>
-                            <Link className="link" to="/user/about">About</Link>
+                            <NavLink className="link" to="/user/about">About</NavLink>
 
                         </li>
                         <li>
-                            <Link className="link" to="/college">College</Link>
+                            <NavLink className="link" to="/college">College</NavLink>
+
+                        </li>
+                        <li>
+                            <NavLink className="link" to="/users">Users</NavLink>
+
+                        </li>
+                        <li>
+                            <NavLink className="link" to="/users/list">List</NavLink>
 
                         </li>
                     </ul>
