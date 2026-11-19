@@ -1,0 +1,8 @@
+.error {
+  border: 2px solid red;
+
+}
+
+.error:focus {
+  outline: 2px solid red;
+}
